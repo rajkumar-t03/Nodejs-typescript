@@ -154,7 +154,7 @@ Since we now have our server up and running, we are going to create the first GE
 To do this, we need to create a file named pokemon.controller.ts (in src), which will have a public router property. This property will hold an instance of the Express router, which we will use to define our routes. Here’s what our controller should initially look like:
 
 
-https://gist.github.com/NyaGarcia/2a8c2224fb4f62b31f723cae6326e650
+
 Our Pokemon controller is where we’re going to define all of the Pokemon routes. Each route will perform a different action, like for example:
 
 Getting a list of all the available Pokemon in the database.
@@ -165,7 +165,6 @@ Anything else we want to do.
 The first route that we are going to define is a simple GET route, which will return a nice welcome message. To do so, we need to create a setRoutes method, which will be responsible for defining the routes. Inside it, we can then define our first GET route, like so:
 
 
-PokemonController version 2 https://gist.github.com/NyaGarcia/3e718df0ba1e43f9eba2d2e6376df971
 Tip: Don’t forget to call the setRoutes method in the controller, or the routes won’t work!
 
 As you can see in the previous code, we’ve used the Express router to define a GET route, which receives two parameters:
@@ -201,7 +200,6 @@ As you can see, our main route now calls the getWelcomeMessage function that we 
 So far, so good. It’s time to import our Controller into our app.ts:
 
 
-https://gist.github.com/NyaGarcia/cd079617ebafad86f033190658813dde
 As you can see on line 28, we’re once again making use of the app.use method, which receives an optional path argument as well as the middleware callback function. Basically, what we’re doing here is telling Express to invoke the PokemonController router whenever we make a request that begins with /pokemon.
 
 And we’re done! Head over to your browser, and if you’ve done everything correctly, you should see your welcome message displayed, like this:
@@ -215,18 +213,15 @@ Remember we created a file which would store all of our constants? You may have 
 Therefore, we are going to take the welcome message and declare it in our constants file:
 
 
-https://gist.github.com/NyaGarcia/42d25352eb9044781fef07c12ff3dd5f
+
 One we’ve done this, we need to import the constants file in our service, like so:
 
-
-PokemonService version 2 https://gist.github.com/NyaGarcia/77fdc298d1822fbc27d6cd96b3076cda
 If you go back to your browser, you should still see the welcome message.
 
 Extracting callback functions
 Another thing we can do to clean up our code a little is to extract the anonymous callback functions into named functions. Let’s take a look at how to do that:
 
 
-PokemonController version 4 https://gist.github.com/NyaGarcia/771a96a187bb25ee9a41bde14953f4f2
 As you can see, by extracting the callback logic into the sayHello function, our route looks a lot cleaner. You can now see the two parameters it receives, the route and the callback functions, at a glance.
 
 >>>
